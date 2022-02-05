@@ -57,6 +57,15 @@ public class Interpreter {
                         numbers.push(num1);
                         break;
 
+                    case SQRT:
+                        num1 = numbers.pop();
+                        if(num1.value >= 0) {
+                            num1.setValue(Math.sqrt(num1.value));
+                        } else{
+                            throw new Exception("sqrt operation on negative value");
+                        }
+                        numbers.push(num1);
+                        break;
                     case LOG:
                         num1 = numbers.pop();
                         num1.setValue(Math.log10(num1.value));
